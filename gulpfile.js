@@ -14,6 +14,9 @@ const imagemin     = require('gulp-imagemin')
 const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
+const gulp		   = require('gulp')
+const ghPages 	   = require('gulp-gh-pages')
+const gulpRsync = require('gulp-rsync')
 
 function browsersync() {
 	browserSync.init({
@@ -93,21 +96,26 @@ function cleandist() {
 	return del('dist/**/*', { force: true })
 }
 
-function deploy() {
-	return src('dist/')
-		.pipe(rsync({
-			root: 'dist/',
-			hostname: 'username@yousite.com',
-			destination: 'yousite/public_html/',
-			// clean: true, // Mirror copy with file deletion
-			include: [/* '*.htaccess' */], // Included files to deploy,
-			exclude: [ '**/Thumbs.db', '**/*.DS_Store' ],
-			recursive: true,
-			archive: true,
-			silent: false,
-			compress: true
-		}))
-}
+// function deploy() {
+// 	return src('dist/')
+// 		.pipe(rsync({
+// 			root: 'dist/',
+// 			hostname: 'username@yousite.com',
+// 			destination: 'yousite/public_html/',
+// 			// clean: true, // Mirror copy with file deletion
+// 			include: [/* '*.htaccess' */], // Included files to deploy,
+// 			exclude: [ '**/Thumbs.db', '**/*.DS_Store' ],
+// 			recursive: true,
+// 			archive: true,
+// 			silent: false,
+// 			compress: true
+// 		}))
+// }
+
+gulp.task('deploy', function() {
+	return gulp.src('./dist/**/*')
+	.pipe(ghPages())
+})
 
 function startwatch() {
 	watch(`app/blocks/**/*`, { usePolling: true }, styles)
@@ -119,7 +127,7 @@ function startwatch() {
 exports.scripts = scripts
 exports.styles  = styles
 exports.images  = images
-exports.deploy  = deploy
+// exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
 exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
 exports.default = series(scripts, styles, images, parallel(browsersync, startwatch))
