@@ -1,0 +1,138 @@
+.footer {
+  position: relative;
+  background-color: $deepclr;
+  color: $textcolorlight;
+  display: flex;
+  flex-direction: column;
+  padding: $margin * 3 $margin * 3 $margin;
+  font-size: $textfont;
+  @include media-breakpoint-down(sm) {
+    padding: $margin $margin;
+  }
+}
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $margin * 2;
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__address {
+  display: flex;
+  flex-direction: column;
+  span {
+    margin-bottom: 20px;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+    }
+  }
+  span:nth-of-type(2) {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+  span:nth-of-type(3) {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  span:nth-of-type(4) {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+  }
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  span {
+    margin-bottom: 20px;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    color: $textcolorlight;
+    margin-bottom: 20px;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+.footer__socials {
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+}
+.footer__social-item {
+  display: flex;
+  align-content: space-between;
+  padding: 10px;
+  @include media-breakpoint-down(sm) {
+    // margin-left: 15px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.my-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $textcolorlight;
+  opacity: 0.8;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+  span {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 6.5px;
+  }
+  &:hover {
+    color: $textcolorlight;
+    text-decoration: none;
+    opacity: 1;
+  }
+  .snowflake {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -7px;
+    opacity: 0.3;
+    transition: transform 2s ease-in;
+    z-index: -1;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}

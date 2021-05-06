@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid $textcolorlight;
+  color: $textcolorlight;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 14px 26px;
+  font-weight: 800;
+  transition: opacity 0.5s ease-out;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: $textcolorlight;
+    top: 25px;
+    left: 15px;
+    transition: width 0.5s ease-out;
+  }
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+    &::before {
+      width: 85%;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+}

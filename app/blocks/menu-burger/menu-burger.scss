@@ -1,0 +1,48 @@
+.menu__icon {
+  display: none;
+  @include media-breakpoint-down(sm) {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    &::before,
+    &::after,
+    span {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease-out 0s;
+      background-color: #fff;
+    }
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+    }
+  }
+  &._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  &._active::before {
+    top: 45%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  &._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+}

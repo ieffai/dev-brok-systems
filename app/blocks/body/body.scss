@@ -1,0 +1,16 @@
+body {
+  font-family: $textfont;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  background-color: $lightclr;
+  color: $textcolordark;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 1440px;
+  margin: auto;
+}
+
+._lock {
+  overflow: hidden;
+}

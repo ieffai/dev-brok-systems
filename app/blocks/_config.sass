@@ -1,0 +1,67 @@
+// USER VARIABLES SECTION
+
+$pageclr: #BED0E8 // Accent Color
+$lightclr: #B5ACAD // Accent Color
+$deepclr: #8A8178 // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolorlight: #fff // Text Color Light
+$textcolordark: #333 // Text Color Dark
+$lineheight: 1.65 // Document Line Height
+$adfont: microgramma-vh, sans-serif // User Font Family
+$textfont: raleway-vh, sans-serif // User Font Family
+$headerfont: oswald-vh, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$margin: 40px
+$bord: 1px solid red
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('oswald-vh', normal, 700, '../fonts/oswaldbold-webfont.woff2')
+@include font('oswald-vh', normal, 500, '../fonts/oswaldmedium-webfont.woff2')
+@include font('raleway-vh', normal, 800, '../fonts/ralewayextrabold-webfont.woff2')
+@include font('raleway-vh', normal, 500, '../fonts/ralewaymedium-webfont.woff2')
+@include font('raleway-vh', normal, 400, '../fonts/ralewayregular-webfont.woff2')
+@include font('raleway-vh', normal, 600, '../fonts/ralewaysemibold-webfont.woff2')
+@include font('microgramma-vh', normal, 500, '../fonts/microgramma-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #fff
+
+::selection
+	background-color: $pageclr
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+ul
+
+	list-style: none
+	padding: 0
+	margin: 0
+a
+	color: $textcolorlight
