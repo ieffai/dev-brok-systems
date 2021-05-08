@@ -1,8 +1,14 @@
 {
-	"name": "optimizedhtml",
-	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
-	"main": "index.js",
+	"name": "DevelBrokSystem",
+	"version": "0.0.1",
+	"description": "Real estate broker",
+	"main": "app.js",
+	"scripts": {
+		"eslint": "eslint ./app --ext .js",
+		"eslintFix": "eslint ./app --fix",
+		"deploy-gh": "git subtree push --prefix dist origin gh-pages",
+		"deploy": "npm run build && scp -r ./dist/* samiq@84.201.130.82:/home/samiq/news-explorer"
+	  },
 	"author": "WebDesign Master",
 	"license": "ISC",
 	"devDependencies": {
@@ -15,6 +21,9 @@
 		"browser-sync": "^2.26.14",
 		"browsersync-ssi": "^0.2.4",
 		"del": "^6.0.0",
+		"eslint": "^7.2.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-plugin-import": "^2.22.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-clean-css": "^4.3.0",

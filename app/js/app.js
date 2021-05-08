@@ -1,9 +1,7 @@
-import Burger from '../js/components/Burger';
-import ScrollOnPage from '../js/components/ScrollOnPage'
-import ScrollUp from '../js/components/ScrollUp';
-import Animation from '../js/components/Animation';
-
-
+import Burger from './components/Burger';
+import ScrollOnPage from './components/ScrollOnPage';
+import ScrollUp from './components/ScrollUp';
+import Animation from './components/Animation';
 
 const burgerButton = document.querySelector('.menu__icon');
 const burgerMenu = document.querySelector('.nav__links');
@@ -19,27 +17,24 @@ const scrollUp = new ScrollUp(scrollUpButton, scrollUpSvgPath);
 const animItems = document.querySelectorAll('._anim-items');
 const animation = new Animation(animItems);
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
-	///scrollUp
-	window.addEventListener('scroll', () => {
-		scrollUp.updateDashOffset();
-		scrollUp.buttonHide();
-	})
-	scrollUpButton.addEventListener('click', () => {
-		scrollUp.scrollUp();
-	})
+  /// scrollUp
+  window.addEventListener('scroll', () => {
+    scrollUp.updateDashOffset();
+    scrollUp.buttonHide();
+  });
+  scrollUpButton.addEventListener('click', () => {
+    scrollUp.scrollUp();
+  });
 
+  // ScrollTo
+  scrollOnPage.addListeners(menuLinks);
+  const list = document.querySelector('.nav__links');
+  list.addEventListener('click', () => {
+    burger.close(burgerButton, burgerMenu);
+  });
 
-	//ScrollTo
-	scrollOnPage.addListeners(menuLinks);
-	const list = document.querySelector('.nav__links');
-	list.addEventListener('click', () => {
-		burger.close(burgerButton, burgerMenu)
-	})
-
-	//burger
-	burger.toggle(burgerButton, burgerMenu);
-	animation.animation();
-})
+  // burger
+  burger.toggle(burgerButton, burgerMenu);
+  animation.animation();
+});
