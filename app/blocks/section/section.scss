@@ -1,6 +1,9 @@
 .section {
   padding: $margin * 3;
   position: relative;
+  @include media-breakpoint-down(lg) {
+    padding: $margin * 2;
+  }
   @include media-breakpoint-down(sm) {
     padding: $margin;
   }
@@ -13,14 +16,8 @@
 
 .section:nth-of-type(3) {
   margin-bottom: $margin;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-bottom: unset;
-  }
-  .section__img-min {
-    transform: translate(-330px, 88px);
-    @include media-breakpoint-down(sm) {
-      transform: translate(0px, 0px);
-    }
   }
 }
 .section:nth-of-type(4) {
@@ -42,7 +39,7 @@
   position: relative;
   padding: $margin 0px;
   justify-content: space-between;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(lg) {
     padding: 0;
   }
 }
@@ -50,7 +47,7 @@
 .section__img {
   width: 40%;
   object-fit: cover;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     display: none;
   }
 }
@@ -65,7 +62,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     width: 100%;
   }
 }
