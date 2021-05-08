@@ -20,7 +20,7 @@
 }
 
 .scroll-up:hover {
-  color: #6b6156;
+  color: $deepclr;
 }
 
 .scroll-up::before {
@@ -42,7 +42,7 @@
 .scroll-up__svg-path {
   box-sizing: border-box;
   fill: none;
-  stroke: #6b6156;
+  stroke: $deepclr;
   stroke-width: 4px;
   transition: 0.2s;
 }
