@@ -7,9 +7,10 @@
 		"eslint": "eslint ./app --ext .js",
 		"eslintFix": "eslint ./app --fix",
 		"deploy-gh": "git subtree push --prefix dist origin gh-pages",
-		"deploy": "npm run build && scp -r ./dist/* samiq@84.201.130.82:/home/samiq/news-explorer"
-	  },
-	"author": "WebDesign Master",
+		"build": "gulp build",
+		"push": "git push origin"
+	},
+	"author": "Sergey Karlinskiy",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.13.10",
