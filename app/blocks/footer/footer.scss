@@ -7,7 +7,7 @@
   padding: $margin * 3 $margin * 3 $margin;
   font-size: $textfont;
   @include media-breakpoint-down(sm) {
-    padding: $margin $margin;
+    padding: $margin 70px;
   }
 }
 .footer__container {
@@ -18,7 +18,7 @@
   margin-bottom: $margin * 2;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
-    align-items: center;
+    margin-bottom: 25px;
   }
 }
 
@@ -31,11 +31,6 @@
       margin-bottom: 10px;
     }
   }
-  span:nth-of-type(2) {
-    @include media-breakpoint-down(sm) {
-      text-align: center;
-    }
-  }
   span:nth-of-type(3) {
     @include media-breakpoint-down(sm) {
       display: none;
@@ -45,9 +40,6 @@
     @include media-breakpoint-down(sm) {
       display: none;
     }
-  }
-  @include media-breakpoint-down(sm) {
-    align-items: center;
   }
 }
 
@@ -76,7 +68,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90%;
+    margin-left: -46px;
+    width: 140%;
+    margin-bottom: 15px;
   }
 }
 .footer__social-item {
@@ -101,6 +95,11 @@
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  @include media-breakpoint-down(sm) {
+    position: absolute;
+    bottom: 5px;
+    left: 25px;
+  }
 }
 
 .my-container {
