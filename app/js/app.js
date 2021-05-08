@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('scroll', () => {
 		scrollUp.updateDashOffset();
 		scrollUp.buttonHide();
-		animation.animation();
 	})
 	scrollUpButton.addEventListener('click', () => {
 		scrollUp.scrollUp();
