@@ -13,7 +13,7 @@ Landing for real estate broker <br />
   - HTML5, Sass, JS, Bootstrap
   - GIT, Babel, GULP
 
-## ![news-front](./src/images/news-demo.gif)
+## ![news-front](./demo.png)
 
 ---
 
